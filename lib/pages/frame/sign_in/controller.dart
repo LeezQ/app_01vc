@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:app_01vc/common/apis/apis.dart';
 import 'package:app_01vc/common/entities/entities.dart';
 import 'package:app_01vc/common/routes/app_pages.dart';
-import 'package:app_01vc/common/utils/utils.dart';
 import 'package:app_01vc/common/widgets/widgets.dart';
 import 'package:app_01vc/global.dart';
 import 'package:get/get.dart';
@@ -44,9 +43,11 @@ class SignInController extends GetxController {
     // }
 
     UserLoginRequestEntity params = UserLoginRequestEntity(
-      username: emailController.value.text,
-      password: duSHA256(passController.value.text),
-    );
+        // username: emailController.value.text,
+        // password: duSHA256(passController.value.text),
+        // password: passController.value.text,
+        username: 'doc-admin',
+        password: 'Admin@Doc');
 
     UserLoginResponseEntity userProfile = await UserAPI.login(
       params: params,

@@ -1,3 +1,4 @@
+import 'package:app_01vc/pages/projects/index.dart';
 import 'package:flutter/material.dart';
 import 'package:app_01vc/common/values/values.dart';
 import 'package:app_01vc/common/widgets/widgets.dart';
@@ -37,7 +38,7 @@ class ApplicationPage extends GetView<ApplicationController> {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        MainPage(),
+        ProjectsPage(),
         CategoryPage(),
         Text('BookmarksPage'),
         Text('AccountPage'),

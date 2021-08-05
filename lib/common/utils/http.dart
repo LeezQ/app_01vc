@@ -229,6 +229,7 @@ class HttpUtil {
     if (authorization != null) {
       requestOptions.headers!.addAll(authorization);
     }
+    print(data.toString());
     var response = await dio.post(
       path,
       data: data,
@@ -236,6 +237,7 @@ class HttpUtil {
       options: requestOptions,
       cancelToken: cancelToken,
     );
+    print(response);
     return response.data;
   }
 

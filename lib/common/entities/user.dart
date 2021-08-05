@@ -32,12 +32,12 @@ class UserLoginRequestEntity {
 
   factory UserLoginRequestEntity.fromJson(Map<String, dynamic> json) =>
       UserLoginRequestEntity(
-        username: json["email"],
+        username: json["username"],
         password: json["password"],
       );
 
   Map<String, dynamic> toJson() => {
-        "email": username,
+        "username": username,
         "password": password,
       };
 }

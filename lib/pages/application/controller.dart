@@ -27,8 +27,7 @@ class ApplicationController extends GetxController {
 
   // tab栏动画
   void handleNavBarTap(int index) {
-    pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 200), curve: Curves.ease);
+    pageController.jumpToPage(index);
   }
 
   // tab栏页码切换
@@ -43,7 +42,7 @@ class ApplicationController extends GetxController {
     super.onInit();
 
     // 准备一些静态数据
-    tabTitles = ['Welcome', 'Cagegory', 'Bookmarks', 'Account'];
+    tabTitles = ['项目', 'Cagegory', 'Bookmarks', 'Account'];
     bottomTabs = <BottomNavigationBarItem>[
       new BottomNavigationBarItem(
         icon: Icon(
@@ -54,7 +53,7 @@ class ApplicationController extends GetxController {
           Iconfont.home,
           color: AppColors.secondaryElementText,
         ),
-        label: 'main',
+        label: '项目',
         backgroundColor: AppColors.primaryBackground,
       ),
       new BottomNavigationBarItem(
