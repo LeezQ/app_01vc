@@ -1,13 +1,14 @@
+import 'package:app_01vc/common/utils/utils.dart';
 import 'package:get/get.dart';
 
-import 'index.dart';
-
 class ProjectsController extends GetxController {
-  ProjectsController();
-
   /// 响应式成员变量
+  var productList = [].obs;
+  var pagination = {}.obs;
 
-  final state = ProjectsState();
+  var searchParams = RxMap<String, dynamic>({"current": 1});
+
+  ProjectsController();
 
   /// 成员变量
 
@@ -39,6 +40,17 @@ class ProjectsController extends GetxController {
   void onReady() {
     super.onReady();
     // async 拉取数据
+    getProjects();
+  }
+
+  void getProjects() async {
+    var response = await HttpUtil().get(
+      '/api/projects',
+      queryParameters: this.searchParams,
+    );
+
+    productList.value = response["projects"];
+    pagination.value = response["pagination"];
   }
 
   ///在 [onDelete] 方法之前调用。 [onClose] 可能用于

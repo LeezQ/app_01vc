@@ -2,9 +2,11 @@ import 'package:get/get.dart';
 
 import 'controller.dart';
 
-class ProjectsBinding implements Bindings {
+class ProjectBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ProjectsController>(() => ProjectsController());
+    Get.lazyPut<ProjectsController>(
+      () => ProjectsController(),
+    );
   }
 }

@@ -1,9 +1,11 @@
+import 'package:app_01vc/pages/analysis/view.dart';
+import 'package:app_01vc/pages/my/view.dart';
 import 'package:app_01vc/pages/projects/index.dart';
+import 'package:app_01vc/pages/weekly/view.dart';
 import 'package:flutter/material.dart';
 import 'package:app_01vc/common/values/values.dart';
 import 'package:app_01vc/common/widgets/widgets.dart';
-import 'package:app_01vc/pages/category/index.dart';
-import 'package:app_01vc/pages/main/index.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -39,9 +41,9 @@ class ApplicationPage extends GetView<ApplicationController> {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         ProjectsPage(),
-        CategoryPage(),
-        Text('BookmarksPage'),
-        Text('AccountPage'),
+        WeeklyPage(),
+        MyPage(),
+        AnalysisPage(),
       ],
       controller: controller.pageController,
       onPageChanged: controller.handlePageChanged,

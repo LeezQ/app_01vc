@@ -8,4 +8,5 @@ abstract class AppRoutes {
 
   static const Application = '/application';
   static const Projects = '/projects';
+  static const My = '/my';
 }
